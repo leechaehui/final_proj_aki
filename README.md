@@ -1,110 +1,110 @@
-# Acute Kidney Injury (AKI) Prediction using MIMIC-IV
+# 🚑 ICU 급성 신손상(AKI) 조기 예측 시스템
 
-> Machine Learning-based Clinical Decision Support System (CDSS) for Early AKI Prediction in ICU Patients
-
----
-
-## 📌 Project Overview
-
-Acute Kidney Injury (AKI) is one of the most common complications in Intensive Care Units (ICUs), and delayed diagnosis can lead to increased mortality and prolonged hospitalization.
-
-This project develops a **two-stage machine learning framework** to predict AKI before onset using the **MIMIC-IV** clinical database, enabling earlier clinical intervention through a Clinical Decision Support System (CDSS).
+> MIMIC-IV 데이터를 활용한 머신러닝 기반 AKI 예측 및 임상 의사결정 지원 시스템(CDSS)
 
 ---
 
-## 🎯 Objectives
+# 📌 프로젝트 소개
 
-- Predict AKI occurrence before clinical diagnosis
-- Classify AKI severity after prediction
-- Compare multiple machine learning models
-- Build an interpretable prediction pipeline for clinical decision support
+급성 신손상(Acute Kidney Injury, AKI)은 중환자실(ICU) 환자에게 흔하게 발생하는 합병증으로, 조기 발견 여부가 환자의 예후에 큰 영향을 미칩니다.
+
+본 프로젝트는 **MIMIC-IV 임상 데이터**를 활용하여 AKI를 조기에 예측하고, 발생 환자의 중증도를 분류하는 **2단계 머신러닝 모델**을 개발하였습니다.
 
 ---
 
-## 👩‍💻 My Role
+# 🎯 프로젝트 목표
 
-- Cohort Construction
+- ICU 환자의 AKI 조기 예측
+- AKI Stage 분류
+- 다양한 머신러닝 모델 성능 비교
+- 임상 의사결정 지원(CDSS) 기반 마련
+
+---
+
+# 👩‍💻 담당 역할
+
+- Cohort 구축
 - Feature Engineering
-- Data Preprocessing
-- Missing Value Processing
-- Outlier Handling
-- Dataset Splitting
-- Machine Learning Modeling
-- Hyperparameter Optimization
-- Performance Evaluation
-- SHAP-based Feature Importance Analysis
+- 데이터 전처리
+- 결측치 처리
+- 이상치 처리
+- 데이터 분할
+- 머신러닝 모델 개발
+- 하이퍼파라미터 튜닝
+- 모델 성능 평가
+- SHAP 기반 변수 중요도 분석
 
 ---
 
-## 📊 Dataset
+# 📊 데이터
 
-| Item | Description |
-|------|-------------|
-| Database | MIMIC-IV |
-| Domain | Intensive Care Unit (ICU) |
-| Observation Window | 48 Hours |
-| Target | Acute Kidney Injury (AKI) |
-| Label Definition | KDIGO 2012 Guideline |
+|항목|내용|
+|---|---|
+|데이터셋|MIMIC-IV|
+|대상|ICU 환자|
+|관찰 기간|48시간|
+|예측 대상|AKI 발생 여부|
+|Label 기준|KDIGO 2012|
 
 ---
 
-## 🏗 Project Workflow
+# 🏗 프로젝트 진행 과정
 
 ```
-Cohort Selection
-        ↓
-Feature Extraction
-        ↓
-Data Preprocessing
-        ↓
+
+Cohort 구축
+↓
+Feature 추출
+↓
+데이터 전처리
+↓
 Feature Engineering
-        ↓
+↓
 EDA
-        ↓
-Train / Validation / Test Split
-        ↓
-AKI Label Generation
-        ↓
-Stage 1 Model
-(AKI Prediction)
-        ↓
-Stage 2 Model
-(AKI Stage Classification)
-        ↓
-Model Evaluation
-        ↓
-SHAP Interpretation
+↓
+Train / Validation / Test 분할
+↓
+AKI Label 생성
+↓
+1단계 모델(AKI 예측)
+↓
+2단계 모델(Stage 분류)
+↓
+최종 성능 평가
+↓
+SHAP 분석
+
 ```
 
 ---
 
-## 📁 Repository Structure
+# 📂 프로젝트 구조
 
 ```
-final_project_aki
 
-├── 코호트
-├── 피처
-├── 전처리
-├── 변수변환
-├── EDA 및 변수변환
-├── 데이터 분할
-├── 레이블
-├── 모델링
-├── 최종성능검사
+📁 코호트
+📁 피처
+📁 전처리
+📁 변수변환
+📁 EDA 및 변수변환
+📁 데이터 분할
+📁 레이블
+📁 모델링
+📁 최종성능검사
+
 ```
 
 ---
 
-## 🤖 Models
+# 🤖 사용 모델
 
-### Stage 1 — AKI Prediction
+## 1단계 (AKI 발생 예측)
 
 - Logistic Regression
 - Random Forest
 - XGBoost
 
-### Stage 2 — AKI Stage Classification
+## 2단계 (AKI Stage 분류)
 
 - LightGBM
 - XGBoost
@@ -112,7 +112,7 @@ final_project_aki
 
 ---
 
-## 📈 Evaluation Metrics
+# 📈 평가 지표
 
 - AUROC
 - AUPRC
@@ -121,46 +121,21 @@ final_project_aki
 - Recall
 - F1-score
 - ROC Curve
-- Precision-Recall Curve
 - Confusion Matrix
 
 ---
 
-## 🔍 Feature Engineering
+# 🛠 기술 스택
 
-Clinical variables include:
-
-- Demographics
-- Vital Signs
-- Laboratory Tests
-- Urine Output
-- Vasopressor Usage
-
-Feature engineering methods:
-
-- Mean
-- Maximum
-- Minimum
-- Sum
-- Duration
-- Missing Indicator
-
----
-
-## 🛠 Tech Stack
-
-### Programming
+### Language
 
 - Python
 - SQL
 
-### Data Processing
+### Library
 
 - Pandas
 - NumPy
-
-### Machine Learning
-
 - Scikit-learn
 - XGBoost
 - LightGBM
@@ -172,34 +147,21 @@ Feature engineering methods:
 
 ---
 
-## 📊 Explainable AI
+# 🔍 주요 수행 내용
 
-Model interpretation was performed using **SHAP (SHapley Additive exPlanations)** to identify the most influential clinical variables contributing to AKI prediction.
-
----
-
-## 💡 Expected Clinical Impact
-
-- Early identification of high-risk AKI patients
-- Support timely clinical intervention
-- Improve ICU patient management
-- Enhance clinical decision-making through AI-based CDSS
+- ICU Cohort 구축
+- 임상 변수 추출
+- 결측치 및 이상치 처리
+- Feature Engineering
+- 머신러닝 모델 비교
+- SHAP 기반 변수 중요도 분석
+- 최종 모델 성능 평가
 
 ---
 
-## 📌 Future Work
+# 📌 기대 효과
 
-- External validation using multicenter datasets
-- Real-time prediction pipeline
-- Integration with hospital EMR systems
-- Deep Learning-based time-series modeling
-
----
-
-## 👤 Author
-
-**Lee Chae Hui**
-
-Big Data Major
-
-Machine Learning • Healthcare AI • Clinical Decision Support System
+- AKI 조기 발견 지원
+- 의료진의 의사결정 지원
+- 중환자 관리 효율 향상
+- AI 기반 CDSS 활용 가능성 제시
