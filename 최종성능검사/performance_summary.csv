@@ -1,0 +1,3 @@
+﻿모델,데이터,AUROC,AUPRC,F1,Recall,Specificity,Threshold
+1단계 LR (AKI 여부),Test 전체,0.8736,0.7098,0.7683,0.9161,0.8451,0.67
+2단계 LGBM (Stage 분류),Test AKI 환자,0.5794,0.2639,0.3929,0.7618,0.3824,0.56
